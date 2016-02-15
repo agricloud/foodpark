@@ -1,0 +1,57 @@
+{
+    "name": "foodpark",
+    "settings": {
+        "cmd": {
+            "license": "custom",
+            "cmdVersion": "6.0.2.14",
+            "frameworkVersion": "5.1.1.451",
+            "frameworkOverride": "/Users/pipi/pipi/projects/foodpark/extjs-app/extjs"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost:1841",
+        "exportPath": "/Users/pipi/pipi/projects/foodpark/web-app/development",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "projectHasEnabledWebServer": true,
+        "lockUrlPrefix": true,
+        "installStatus": "Not Installed",
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app"
+        }
+    },
+    "xdsVersion": "3.2.0",
+    "xdsBuild": 339,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "a245c806-5276-45ae-b56f-4b40a627780a",
+            "427007df-6210-43fd-9b2c-c896194fe218",
+            "68100580-8ab4-48fd-99c4-80b33a6cd57a"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "5357f4c3-c127-412e-b420-2892088fa213",
+            "eeae21b0-befd-407c-918c-582f0240008b"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
