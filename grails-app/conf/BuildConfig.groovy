@@ -64,54 +64,58 @@ grails.project.dependency.resolution = {
 
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
-        runtime 'mysql:mysql-connector-java:5.1.24'
+        runtime 'mysql:mysql-connector-java:5.1.29'
+        
         compile 'org.apache.ant:ant:1.7.1'    //you can also use runtime
         compile 'org.apache.ant:ant-launcher:1.7.1'
 
         runtime 'net.java.dev.jets3t:jets3t:0.9.0'
         compile 'org.imgscalr:imgscalr-lib:4.2'
+
+        compile 'xml-apis:xml-apis:1.4.01'
     }
 
     plugins {
 
 
         // plugins for the build system only
-        build ':tomcat:7.0.54' //build ':tomcat:7.0.52.1'
+        build ':tomcat:7.0.55.3' //build ':tomcat:7.0.54'
 
         // plugins for the compile step
-        compile ':scaffolding:2.1.2' //compile ":scaffolding:2.1.0"
-        compile ':cache:1.1.8' //compile ':cache:1.1.1'
+        compile "org.grails.plugins:scaffolding:2.1.2" //compile ':scaffolding:2.1.2'
+        compile "org.grails.plugins:cache:1.1.8" //compile ':cache:1.1.8'
+        compile "org.grails.plugins:asset-pipeline:2.6.10"
 
         // plugins needed at runtime but not for compilation
         // runtime ':hibernate:3.6.10.14' // ':hibernate:3.6.10.10'
-        runtime ':hibernate4:4.3.5.2' // or ':hibernate:3.6.10.14'
-        runtime ':database-migration:1.4.0' //runtime ":database-migration:1.3.8"
-        runtime ":jquery:1.11.0.2" //runtime ":jquery:1.10.2"
-        runtime ':resources:1.2.14' //runtime ":resources:1.2.7"
+        runtime ':hibernate4:4.3.8.1' //runtime ':hibernate4:4.3.5.2' 
+        compile "org.grails.plugins:database-migration:1.4.1" //runtime ':database-migration:1.4.0'
+        compile "org.grails.plugins:jquery:1.11.1" //runtime ":jquery:1.11.0.2"
+        compile "org.grails.plugins:resources:1.2.14" //runtime ':resources:1.2.14'
 
         // add plugin
         //compile ':spring-security-core:latest.release'
-        compile ':spring-security-core:2.0-RC5' //compile ':spring-security-core:1.2.7.3'
-        runtime ":cors:1.1.0"
+        compile "org.grails.plugins:spring-security-core:2.0.0"//compile ':spring-security-core:2.0-RC5'
+        compile "org.grails.plugins:cors:1.1.8"
 
         // Adds REST client capabilities to your Grails application.
-        compile ":rest:0.8"
+        compile "org.grails.plugins:rest:0.8" //compile ":rest:0.8"
 
         // Grails REST Client Builder Plugin
-        compile ':rest-client-builder:2.1.1' //compile ':rest-client-builder:1.0.3'
+        compile "org.grails.plugins:rest-client-builder:2.1.1" //compile ':rest-client-builder:2.1.1'
 
         // compile ":twitter-bootstrap:3.0.0"
 
-        compile ":jasper:1.11.0" //compile ":jasper:1.8.0"
+        compile "org.grails.plugins:jasper:1.11.0" //compile ":jasper:1.11.0"
 
 
         // Grails Ant Plugin
         // 執行 Ant 任務
-        compile ":grails-ant:0.1.3"
+        compile "org.grails.plugins:grails-ant:0.1.3" //compile ":grails-ant:0.1.3"
         
-        compile ":quartz:1.0.2" //compile ":quartz:1.0-RC13"
+        compile "org.grails.plugins:quartz:1.0.2" //compile ":quartz:1.0.2"
 
-        test ":code-coverage:1.2.7"
-        compile ":codenarc:0.24.1" //compile ":codenarc:0.19"
+        compile "org.grails.plugins:code-coverage:2.0.3-3" //test ":code-coverage:1.2.7"
+        compile "org.grails.plugins:codenarc:0.24.1" //compile ":codenarc:0.24.1"
     }
 }
