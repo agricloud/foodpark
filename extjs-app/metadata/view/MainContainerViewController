@@ -1,0 +1,43 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "maincontainer",
+        "designer|userClassName": "MainContainerViewController"
+    },
+    "designerId": "ac536100-a571-4549-97ee-d49e0c2d28e2",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "xtypeStr, tabName, docLink"
+                ],
+                "fn": "addView",
+                "implHandler": [
+                    "var mainPanel = this.lookupReference('mainPanel');",
+                    "",
+                    "//console.log(mainPanel);",
+                    "",
+                    "mainPanel.removeAll();",
+                    "",
+                    "mainPanel.add({",
+                    "    xtype: xtypeStr,",
+                    "    title:tabName// +'　'+'<a href=\"'+docLink+'\" target=\"_blank\" style=\"color:grey;text-decoration:underline;\">說明</a>'",
+                    "});"
+                ]
+            },
+            "name": "addView",
+            "designerId": "5fa4676d-e65f-4329-a01c-a50a743f61a9"
+        }
+    ]
+}

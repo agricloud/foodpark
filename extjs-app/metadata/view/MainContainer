@@ -1,0 +1,291 @@
+{
+    "type": "Ext.container.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "maincontainer",
+        "designer|userClassName": "MainContainer",
+        "height": 650,
+        "id": "mainCt",
+        "layout": "border",
+        "reference": "mainCt",
+        "width": null
+    },
+    "name": "MyContainer12",
+    "designerId": "d97b87da-628f-493c-8239-87a561f03b3f",
+    "viewControllerInstanceId": "ac536100-a571-4549-97ee-d49e0c2d28e2",
+    "viewModelInstanceId": "4433a69e-4a67-4b22-9bdb-0d3ce577d95c",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsible": true,
+                "designer|uiInterfaceName": "default-framed",
+                "frame": true,
+                "header": false,
+                "hideCollapseTool": true,
+                "id": "menuPanel",
+                "itemId": "menuPanel",
+                "layout": "accordion",
+                "layout|region": "west",
+                "layout|split": true,
+                "placeholder": [
+                    "{",
+                    "    xtype: 'header',",
+                    "    width: 8,",
+                    "    listeners: {",
+                    "        click: {",
+                    "            fn: function(header, e, eOpts){",
+                    "                        header.up().down('panel[itemId=menuPanel]').expand();",
+                    "                    }",
+                    "        },",
+                    "        //end click",
+                    "        mouseover: {",
+                    "            element: 'el',",
+                    "            fn: function(event, el, eOpts){//event, html, eOpts",
+                    "                        var header = Ext.getCmp(this.id);",
+                    "                        header.up().down('panel[itemId=menuPanel]').floatCollapsedPanel();",
+                    "                    }",
+                    "        }",
+                    "    }",
+                    "    //end listener",
+                    "}"
+                ],
+                "title": null,
+                "width": 180
+            },
+            "name": "MyPanel",
+            "designerId": "b556dc71-996a-46c2-bbd0-73c5fbca0b54",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "height": 250,
+                        "layout": "vbox",
+                        "scrollable": true,
+                        "title": "Basic Data Maintain",
+                        "width": 400
+                    },
+                    "name": "MyPanel2",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "93da5074-ddda-4059-a9e9-440b824a7a77",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|uiInterfaceName": "default-medium",
+                                "height": null,
+                                "itemId": "siteMaintain",
+                                "layout|flex": null,
+                                "scale": "medium",
+                                "text": "Site Maintain",
+                                "ui": "default-medium"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "39d90612-5ae5-4502-b2f4-19bdfa1e3e87",
+                            "cn": [
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "fn": "processSiteMaintain",
+                                        "implHandler": [
+                                            "config.text=Utilities.getMsg('mainContainer.siteMaintain.label');",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "name": "processSiteMaintain",
+                                    "designerId": "2f230607-8ee9-4df8-9157-51156ab16bb9"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSiteMaintainClick",
+                                        "implHandler": [
+                                            "var xtypeStr = 'siteview';",
+                                            "var tabName = Utilities.getMsg('mainContainer.siteMaintain.label');//'農場維護';",
+                                            "var docLink = '';//'https://drive.google.com/file/d/0B_Z9et2ajnisQ2F1RkV6aTZQSTA/edit?usp=sharing';",
+                                            "this.addView(xtypeStr,tabName,docLink);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onSiteMaintainClick",
+                                    "designerId": "df0f1884-8e8d-411e-83d9-cd6c32f257c0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "fn": "processBasicDataMaintain",
+                                "implHandler": [
+                                    "config.title=Utilities.getMsg('mainContainer.basicDataMaintain.label');",
+                                    "return config;"
+                                ]
+                            },
+                            "name": "processBasicDataMaintain",
+                            "designerId": "aeaf9278-87dd-4528-93a5-17a6218d506d"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "mainPanel",
+                "layout": "fit",
+                "layout|region": "center",
+                "reference": "mainPanel",
+                "title": null
+            },
+            "name": "MyPanel1",
+            "designerId": "e6a29586-1983-459c-8ec6-15964fa71c1c",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "<div align=\"center\" style=\"color:grey;font-size:25px;font-family:sans-serif;line-height:150px;\">wellcome</div>",
+                        "itemId": "wellcome",
+                        "layout": "fit",
+                        "title": "目前位置：管理首頁"
+                    },
+                    "name": "MyPanel4",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "48252264-6a20-4a4d-9621-740fa7cd4036"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "middle",
+                "container|pack": "end",
+                "height": 40,
+                "html": "<header>\\n<div id=\"username\" align=\"right\" style=\"color:grey;font-size:14px;font-family:sans-serif;font-weight:bold;line-height:40px;margin-right:150px\" >Guan-Yin</div>\\n</header>",
+                "itemId": "northPanel",
+                "layout": "hbox",
+                "layout|region": "north",
+                "title": null
+            },
+            "name": "MyPanel3",
+            "configAlternates": {
+                "html": "string"
+            },
+            "designerId": "d68e1e67-5150-4d3c-9846-59b3063b9787",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": null,
+                        "layout|margins": null,
+                        "margin": "0px 60px",
+                        "text": "Logout"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "a632fbc4-c01c-4dd4-b36e-4c478c664bb0",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick",
+                                "implHandler": [
+                                    "Utilities.logout();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onButtonClick",
+                            "designerId": "f8a6b95d-3695-4111-8b82-cfddb0969ac3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 38,
+                "itemId": "southPanel",
+                "layout|region": "south",
+                "title": null
+            },
+            "name": "MyPanel5",
+            "designerId": "b2bdacfa-ecad-4d9f-ad2e-a6d463431b25"
+        }
+    ]
+}

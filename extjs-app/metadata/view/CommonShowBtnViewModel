@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commonshowbtn",
+        "designer|userClassName": "CommonShowBtnViewModel"
+    },
+    "name": "CommonCreateBtnViewModel1",
+    "designerId": "cafff948-3f76-4bec-a384-acdf39c76876"
+}

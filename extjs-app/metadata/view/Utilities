@@ -1,0 +1,503 @@
+{
+    "type": "class",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "alternateClassName": [
+            "Utilities"
+        ],
+        "designer|userClassName": "Utilities",
+        "extend": "Ext.app.Controller",
+        "singleton": true
+    },
+    "name": "MyClass",
+    "designerId": "66199e0f-4206-4a8e-81dc-4c7bda973a8b",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "action, config"
+                ],
+                "fn": "respondFailure",
+                "implHandler": [
+                    "Ext.MessageBox.alert('Failure',action.result.message);",
+                    "",
+                    "",
+                    "if(action.url.indexOf('create')!=-1){",
+                    "    config.toolbar().down('button[itemId=commonSaveBtn]').setDisabled(false);",
+                    "}else {",
+                    "    config.toolbar().down('button[itemId=commonDeleteBtn]').setDisabled(false);",
+                    "    config.toolbar().down('button[itemId=commonUpdateBtn]').setDisabled(false);",
+                    "}"
+                ]
+            },
+            "name": "respondFailure",
+            "designerId": "33fab5e9-441e-4f9a-89b7-68ea4aa020fb"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "action, config"
+                ],
+                "fn": "respondSuccess",
+                "implHandler": [
+                    "Ext.MessageBox.alert('Success',action.result.message);",
+                    "",
+                    "console.log(config.grid());",
+                    "config.grid().getStore().reload();",
+                    "config.form().getForm().reset(true);"
+                ]
+            },
+            "name": "respondSuccess",
+            "designerId": "9b447bee-a86f-4162-bb58-8011b03e941a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "basic, valid, config"
+                ],
+                "fn": "validityChange",
+                "implHandler": [
+                    "config.form().getForm().updateRecord();",
+                    "",
+                    "if(basic.getRecord()!=null && basic.getRecord().getData().id!=null){",
+                    "    if(valid){",
+                    "        config.toolbar().down('button[itemId=commonUpdateBtn]').setDisabled(false);",
+                    "    }",
+                    "    else{",
+                    "        config.toolbar().down('button[itemId=commonUpdateBtn]').setDisabled(true);",
+                    "    }",
+                    "}",
+                    "else{",
+                    "    if(valid){",
+                    "        config.toolbar().down('button[itemId=commonSaveBtn]').setDisabled(false);",
+                    "    }",
+                    "    else{",
+                    "        config.toolbar().down('button[itemId=commonSaveBtn]').setDisabled(true);",
+                    "    }",
+                    "}"
+                ]
+            },
+            "name": "validityChange",
+            "designerId": "7c411880-68f8-411c-b0e5-51dfb1be5b41"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config, component"
+                ],
+                "fn": "createFiltersFeature",
+                "implHandler": [
+                    "if(config){",
+                    "    for (var i=0; i<config.columns.length; i++) {",
+                    "        if(config.columns[i].xtype === 'numbercolumn'){",
+                    "            config.columns[i].type = 'numeric';",
+                    "        }",
+                    "        else if(config.columns[i].xtype === 'datecolumn'){",
+                    "            config.columns[i].type = 'date';",
+                    "        }",
+                    "        else if(config.columns[i].xtype === 'booleancolumn'){",
+                    "            config.columns[i].type = 'boolean';",
+                    "        }",
+                    "",
+                    "        config.columns[i].filter = {",
+                    "            type: config.columns[i].type",
+                    "        };",
+                    "    }",
+                    "",
+                    "    /* extjs 4.2",
+                    "    config.features = [{",
+                    "        ftype: 'filters',",
+                    "        encode: true,",
+                    "        filters: config.columns",
+                    "    }];",
+                    "    */",
+                    "",
+                    "    return config;",
+                    "}",
+                    "if(component){",
+                    "    var columns = component.getColumns();",
+                    "    for (var i=0; i<columns.length; i++) {",
+                    "        if(columns[i].getXType() === 'numbercolumn'){",
+                    "            columns[i].type = 'numeric';",
+                    "        }",
+                    "        else if(columns[i].getXType() === 'datecolumn'){",
+                    "            columns[i].type = 'date';",
+                    "        }",
+                    "        else if(columns[i].getXType() === 'booleancolumn'){",
+                    "            columns[i].type = 'boolean';",
+                    "        }",
+                    "",
+                    "        columns[i].filter = {",
+                    "            type: columns[i].type",
+                    "        };",
+                    "    }",
+                    "}"
+                ]
+            },
+            "name": "createFiltersFeature",
+            "designerId": "6594276c-b5d7-436a-8401-9f62518d49ee"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "logout",
+                "implHandler": [
+                    "Ext.MessageBox.confirm('logout', Utilities.getMsg('default.message.logout'), function(btn){",
+                    "    if(btn === 'yes'){",
+                    "",
+                    "        Utilities.doLogout();",
+                    "",
+                    "    }",
+                    "});"
+                ]
+            },
+            "name": "logout",
+            "designerId": "d27f564d-1a6b-4d0c-9075-36fb1b288d0a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config, prefix"
+                ],
+                "fn": "processConfigBundle",
+                "implHandler": [
+                    "if (!prefix) {",
+                    "    console.warn(\"processConfigBundle require a prefix argument\");",
+                    "}",
+                    "/*",
+                    "if(config instanceof Ext.form.FieldContainer || config.xtype=='fieldcontainer' ){",
+                    "var key = prefix+'.label';",
+                    "",
+                    "if (!this.getMsg(key).match(\".undefined\")) {",
+                    "config.fieldLabel = this.getMsg(key);",
+                    "}else console.log(this.getMsg(key));",
+                    "}",
+                    "*/",
+                    "if ((config instanceof Ext.form.Panel || config.xtype=='form') && config.items) {",
+                    "    for (var i=0; i<config.items.length; i++) {",
+                    "        var target = config.items[i];",
+                    "",
+                    "        if (target.fieldLabel && target.name) {",
+                    "            var key = prefix+'.'+target.name+'.label';",
+                    "            // Check lang def exists",
+                    "            if (!this.getMsg(key).match(\".undefined\")) {",
+                    "                target.fieldLabel = this.getMsg(key);",
+                    "            }else console.log(this.getMsg(key));",
+                    "        }",
+                    "        if(target.items){",
+                    "            for(var j=0; j<target.items.length; j++){",
+                    "                var innerTarget=target.items[j];",
+                    "                if(innerTarget.fieldLabel){",
+                    "                    key = prefix+'.'+innerTarget.name+'.label';",
+                    "                    // Check lang def exists",
+                    "                    if (!this.getMsg(key).match(\".undefined\")) {",
+                    "                        innerTarget.fieldLabel = this.getMsg(key);",
+                    "                    }else console.log(this.getMsg(key));",
+                    "                }",
+                    "            }",
+                    "        }",
+                    "    }",
+                    "}",
+                    "",
+                    "if ((config instanceof Ext.grid.Panel || config.xtype=='gridpanel' || config.xtype=='treepanel' || config instanceof Ext.tree.Panel) && config.columns) {",
+                    "    if(config.title != null)",
+                    "    config.title = this.getMsg(prefix+'.label');",
+                    "    for (var i=0; i<config.columns.length; i++) {",
+                    "        var target = config.columns[i];",
+                    "        if (target.text) {",
+                    "            var key = prefix+'.'+target.dataIndex+'.label';",
+                    "            // Check lang def exists",
+                    "            if (!this.getMsg(key).match(\".undefined\")) {",
+                    "                target.text  = this.getMsg(key);",
+                    "            }else console.log(this.getMsg(key));",
+                    "        }",
+                    "    }",
+                    "}",
+                    "",
+                    "return config;"
+                ]
+            },
+            "name": "processConfigBundle",
+            "designerId": "078d55a8-e93a-4b07-b16e-d98fe30848d9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "component, prefix"
+                ],
+                "fn": "processI18nBundle",
+                "implHandler": [
+                    "if (!prefix) {",
+                    "    console.warn(\"processI18nBundle require a prefix argument\");",
+                    "}",
+                    "",
+                    "if ((component instanceof Ext.form.Panel || component.getXType()=='form') && component.items) {",
+                    "    for (var i=0; i<component.items.items.length; i++) {",
+                    "        var target = component.items.items[i];",
+                    "        if (target.fieldLabel && target.name) {",
+                    "            var key = prefix+'.'+target.name+'.label';",
+                    "            // Check lang def exists",
+                    "            if (!this.getMsg(key).match(\".undefined\")) {",
+                    "                target.fieldLabel = this.getMsg(key);",
+                    "            }else console.log(this.getMsg(key));",
+                    "        }",
+                    "        if(target.items){",
+                    "            for(var j=0; j<target.items.items.length; j++){",
+                    "                var innerTarget=target.items.items[j];",
+                    "                if(innerTarget.fieldLabel && innerTarget.name){",
+                    "                    key = prefix+'.'+innerTarget.name+'.label';",
+                    "                    // Check lang def exists",
+                    "                    if (!this.getMsg(key).match(\".undefined\")) {",
+                    "                        innerTarget.setFieldLabel(this.getMsg(key));",
+                    "                    }else console.log(this.getMsg(key));",
+                    "                }",
+                    "            }",
+                    "        }",
+                    "    }",
+                    "}",
+                    "",
+                    "if ((component instanceof Ext.grid.Panel || component.getXType()=='gridpanel' || component.getXType()=='treepanel' || component instanceof Ext.tree.Panel) && component.getColumns()) {",
+                    "    if(component.getTitle() != null)",
+                    "        component.setTitle(this.getMsg(prefix+'.label'));",
+                    "    var columns = component.getColumns();",
+                    "    for (var i=0; i<columns.length; i++) {",
+                    "        var target = columns[i];",
+                    "        var key = prefix+'.'+target.dataIndex+'.label';",
+                    "        // Check lang def exists",
+                    "        if (!this.getMsg(key).match(\".undefined\")) {",
+                    "            target.setText(this.getMsg(key));",
+                    "        }else console.log(this.getMsg(key));",
+                    "    }",
+                    "}"
+                ]
+            },
+            "name": "processI18nBundle",
+            "designerId": "c5d6873c-8bc8-4203-a89e-d8821f4fd588"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "lang"
+                ],
+                "fn": "getMsg",
+                "implHandler": [
+                    "lang=Utilities.getSysConfig(\"i18nType\")+\".\"+lang;",
+                    "return foodpark.getApplication().bundle.getMsg(lang);"
+                ]
+            },
+            "name": "getMsg",
+            "designerId": "43bbd1ab-bc9e-459a-bf8f-059976a9db43"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callback"
+                ],
+                "fn": "readSysConfig",
+                "implHandler": [
+                    "var that = this;",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: '/api/readSysConfig',",
+                    "    async: false,",
+                    "    params: {",
+                    "        senchaEnv: \"extjs\"",
+                    "    },",
+                    "    success: function(response, opts) {",
+                    "        that.sysConfig = Ext.decode(response.responseText);",
+                    "        if(callback)",
+                    "            callback();",
+                    "    },",
+                    "    failure: function(response, opts) {",
+                    "        Ext.MessageBox.alert('Failure', \"無法讀取系統參數\");",
+                    "    }",
+                    "});"
+                ]
+            },
+            "name": "readSysConfig",
+            "designerId": "5f7ffd8d-deb7-4ba1-be9c-942cfa9d193c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "name"
+                ],
+                "fn": "getSysConfig",
+                "implHandler": [
+                    "return this.sysConfig[name];"
+                ]
+            },
+            "name": "getSysConfig",
+            "designerId": "0b299048-8922-4ee8-88fb-9dd6c6f64fdf"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "checkSession",
+                "implHandler": [
+                    "var that=this;",
+                    "",
+                    "this.checkSessionTask = {",
+                    "    run: function(){",
+                    "        that.readSysConfig(function(){",
+                    "",
+                    "            var username=that.getSysConfig(\"username\");",
+                    "            if(username){",
+                    "                console.log(username+\"連線ing...\"+new Date());",
+                    "            }",
+                    "            else{",
+                    "                console.log(\"連線逾時已登出\"+new Date());",
+                    "                that.doLogout();",
+                    "                Ext.MessageBox.alert('登出提示', '連線逾時已登出');",
+                    "            }",
+                    "",
+                    "        });",
+                    "",
+                    "    },",
+                    "    interval: 1800000//30mins",
+                    "};",
+                    "",
+                    "Ext.TaskManager.start(this.checkSessionTask);"
+                ]
+            },
+            "name": "checkSession",
+            "designerId": "f0d93642-5679-425d-a5f0-75f7ed32fb43"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "doLogout",
+                "implHandler": [
+                    "Ext.Ajax.request({",
+                    "    url: '/j_spring_security_logout',",
+                    "    success: function(response){",
+                    "        //var text = response.responseText;",
+                    "        var mainVP = Ext.getCmp('mainVP');",
+                    "        mainVP.removeAll();",
+                    "        mainVP.add({",
+                    "            xtype: 'logincontainer'",
+                    "        });",
+                    "    }",
+                    "});",
+                    "",
+                    "this.stopCheckSession();"
+                ]
+            },
+            "name": "doLogout",
+            "designerId": "159e4aec-27da-4f7c-8e44-3cbafcdcac5d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "stopCheckSession",
+                "implHandler": [
+                    "Ext.TaskManager.stop(this.checkSessionTask);"
+                ]
+            },
+            "name": "stopCheckSession",
+            "designerId": "d58d4b47-0e3a-44d7-98ca-5aaab7ebc135"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "combo, id, value"
+                ],
+                "fn": "comboReload",
+                "implHandler": [
+                    "combo.getStore().load({",
+                    "    params: {'nameLike': value},",
+                    "    callback: function(records, operation, success) {",
+                    "        combo.setValue(id);",
+                    "    }",
+                    "});"
+                ]
+            },
+            "name": "comboReload",
+            "designerId": "05b4e3a4-af9f-48c1-87e5-94d7b9ae80af"
+        }
+    ]
+}

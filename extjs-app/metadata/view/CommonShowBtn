@@ -1,0 +1,46 @@
+{
+    "type": "Ext.button.Button",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commonshowbtn",
+        "designer|userClassName": "CommonShowBtn",
+        "glyph": 47,
+        "itemId": "commonShowBtn",
+        "style": "font-family:Pictos;",
+        "text": "Show"
+    },
+    "name": "CommonCreateBtn1",
+    "configAlternates": {
+        "style": "string"
+    },
+    "designerId": "3519663d-c4e9-4123-b6d4-87d3162c6e9b",
+    "viewControllerInstanceId": "d85d0eeb-bc83-4275-8677-65bd1c1faaef",
+    "viewModelInstanceId": "cafff948-3f76-4bec-a384-acdf39c76876",
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processCommonShowBtn",
+                "implHandler": [
+                    "config.text=Utilities.getMsg('common.showBtn.label');",
+                    "",
+                    "return config;"
+                ]
+            },
+            "name": "processCommonShowBtn",
+            "designerId": "51cc5285-9482-4f82-a46a-fc0a05f85cee"
+        }
+    ]
+}

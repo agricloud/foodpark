@@ -1,0 +1,154 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LoginController",
+        "views": [
+            "MainViewport",
+            "MainContainer"
+        ]
+    },
+    "name": "MyController",
+    "designerId": "c7f4db64-bf33-478b-85cf-59f9babfd7fd",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "application"
+                ],
+                "fn": "init",
+                "implHandler": [
+                    "this.control({",
+                    "    'form[itemId=loginForm] button[itemId=loginBtn]': {",
+                    "        click: this.doLogin",
+                    "    },",
+                    "    'form[itemId=loginForm] button[itemId=QueryBtn]': {",
+                    "        click: this.showQueryWin",
+                    "    },",
+                    "    'form[itemId=loginForm] button[itemId=resetBtn]': {",
+                    "        click: this.doReset",
+                    "    }",
+                    "});"
+                ]
+            },
+            "name": "init",
+            "designerId": "b1ba9139-1e3f-4353-8b63-5ec4e534c528"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "btn, e, eOpts"
+                ],
+                "fn": "doLogin",
+                "implHandler": [
+                    "var form = btn.up('form').getForm();",
+                    "if (form.isValid()) {",
+                    "    form.submit({",
+                    "        success: this.loginSuccess,",
+                    "        failure: this.loginFailed",
+                    "    });",
+                    "}",
+                    "else {",
+                    "    Ext.Msg.alert('無法登入', '請檢查表單資料！');",
+                    "}"
+                ]
+            },
+            "name": "doLogin",
+            "designerId": "b6f55e20-4505-456d-894c-4ab232026922"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "form, action"
+                ],
+                "fn": "loginSuccess",
+                "implHandler": [
+                    "var mainVP = Ext.getCmp('mainVP');",
+                    "mainVP.removeAll();",
+                    "mainVP.add({xtype: 'maincontainer'});",
+                    "",
+                    "//登入後顯示使用者名稱",
+                    "//Ext.get('username').update(action.result.username, false);",
+                    "Ext.get('username').update(action.result.fullName+\"(\"+action.result.username+\")\", false);",
+                    "",
+                    "//計時檢查連線",
+                    "Utilities.checkSession();"
+                ]
+            },
+            "name": "loginSuccess",
+            "designerId": "be1fd78f-d963-4e08-b268-3685df7619fc"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "loginFailed",
+                "implHandler": [
+                    "Ext.Msg.alert('無法登入', '無法通過驗證！');"
+                ]
+            },
+            "name": "loginFailed",
+            "designerId": "655b65e5-e835-43d2-a915-a925319f3e26"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showQueryWin"
+            },
+            "name": "showQueryWin",
+            "designerId": "6ccd2d78-ae20-4546-91ff-15917ad4b06e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "btn, e, eOpts"
+                ],
+                "fn": "doReset",
+                "implHandler": [
+                    "console.log('doReset');",
+                    "var form = btn.up('form').getForm();",
+                    "form.reset();"
+                ]
+            },
+            "name": "doReset",
+            "designerId": "70ca413d-c714-4725-832b-6a2287bfbd86"
+        }
+    ]
+}

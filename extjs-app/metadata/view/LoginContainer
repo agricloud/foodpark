@@ -1,0 +1,367 @@
+{
+    "type": "Ext.container.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "defaultListenerScope": null,
+        "defaults": [
+            "{",
+            "    anchor: '100%'",
+            "}"
+        ],
+        "designer|userAlias": "logincontainer",
+        "designer|userClassName": "LoginContainer",
+        "frame": true,
+        "height": null,
+        "id": "login",
+        "layout": "vbox",
+        "minHeight": 300,
+        "width": null
+    },
+    "name": "MyContainer",
+    "designerId": "55487402-e7aa-489c-a754-392be6cb118b",
+    "viewControllerInstanceId": "dae6593b-078b-4f17-85f1-e919cf2ace1d",
+    "viewModelInstanceId": "3910a2d8-4e13-45d4-aab1-d32b8f64840c",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "center",
+                "height": null,
+                "itemId": "header",
+                "layout": "vbox",
+                "layout|flex": 3
+            },
+            "name": "MyContainer",
+            "designerId": "95222ace-62dc-44d2-97ff-1b305a6b1fe5",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "center",
+                        "height": 200,
+                        "itemId": "main",
+                        "layout": "vbox",
+                        "layout|flex": null,
+                        "scrollable": true
+                    },
+                    "name": "MyContainer1",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "5f816a70-8456-49b9-a589-31e07d3f29c2",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyPadding": 10,
+                                "designer|uiInterfaceName": "default-framed",
+                                "frame": true,
+                                "itemId": "loginForm",
+                                "layout": "auto",
+                                "layout|flex": null,
+                                "reference": "mainForm",
+                                "title": null,
+                                "url": "j_spring_security_check"
+                            },
+                            "name": "MyForm1",
+                            "designerId": "80d7da49-c8af-4369-8d73-52b4e0dcb7be",
+                            "cn": [
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "logo"
+                                    },
+                                    "name": "MyContainer2",
+                                    "designerId": "01d6606e-1558-41aa-bbba-4d5fc66d504d"
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "frame": true,
+                                        "itemId": "login-box"
+                                    },
+                                    "name": "MyContainer3",
+                                    "designerId": "2bb996d8-c00e-46fc-881f-d543eec0c53f",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.container.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "top"
+                                            },
+                                            "name": "MyContainer4",
+                                            "designerId": "37409819-325e-4f3e-ab62-c5ea5eeefa65"
+                                        },
+                                        {
+                                            "type": "Ext.container.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "html": "Welcome to The Foodpark Manage System.",
+                                                "itemId": "info"
+                                            },
+                                            "name": "MyContainer5",
+                                            "configAlternates": {
+                                                "html": "string"
+                                            },
+                                            "designerId": "69104223-c938-48fe-9668-b785e08b3dc2"
+                                        },
+                                        {
+                                            "type": "Ext.container.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "container|align": "stretch",
+                                                "itemId": "login-input",
+                                                "layout": "vbox"
+                                            },
+                                            "name": "MyContainer6",
+                                            "designerId": "e8d05c54-08db-4ea5-a322-d11f45ea2fa7",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "blankText": null,
+                                                        "fieldLabel": "帳號 / username",
+                                                        "inputId": "system_user",
+                                                        "layout|flex": null,
+                                                        "name": "j_username",
+                                                        "triggerWrapCls": null,
+                                                        "value": null
+                                                    },
+                                                    "name": "MyTextField",
+                                                    "designerId": "29cdefb4-ecff-4e26-9f24-9a504b8b9f40"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "密碼 / password",
+                                                        "inputId": "system_pass",
+                                                        "inputType": "password",
+                                                        "layout|flex": null,
+                                                        "name": "j_password",
+                                                        "triggerWrapCls": null,
+                                                        "value": null
+                                                    },
+                                                    "name": "MyTextField1",
+                                                    "designerId": "70d73cc3-d6c5-4fd1-ac38-0284364e559c"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.container.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "remember"
+                                            },
+                                            "name": "MyContainer7",
+                                            "designerId": "662e2299-214d-412d-b00e-29d6fe4dcb41",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.Checkbox",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "boxLabel": "記住密碼 / Remember me",
+                                                        "fieldLabel": null
+                                                    },
+                                                    "name": "MyCheckbox",
+                                                    "designerId": "50192eeb-f04d-4bb9-9735-58cfaaab14d2"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.container.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|snapToGrid": 10,
+                                                "height": 50,
+                                                "itemId": "bottom-bar",
+                                                "layout": "absolute"
+                                            },
+                                            "name": "MyContainer8",
+                                            "designerId": "9ca10c54-630b-439f-91ec-a64a1a38fd1d",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.container.Container",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "itemId": "buttons",
+                                                        "layout|x": 180,
+                                                        "layout|y": 10,
+                                                        "margin": null
+                                                    },
+                                                    "name": "MyContainer9",
+                                                    "designerId": "e14b0c5a-4560-4299-b872-de0bec1a7cbb",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.button.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "itemId": "resetBtn",
+                                                                "margin": 2,
+                                                                "text": "重設"
+                                                            },
+                                                            "name": "MyButton1",
+                                                            "designerId": "08130eb8-4db6-473f-b5bb-1a10d7dee4e3"
+                                                        },
+                                                        {
+                                                            "type": "Ext.button.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "hidden": true,
+                                                                "itemId": "registerBtn",
+                                                                "margin": 2,
+                                                                "text": "註冊"
+                                                            },
+                                                            "name": "MyButton",
+                                                            "designerId": "08dc3afb-032b-4432-8b27-cf838cb59c6c"
+                                                        },
+                                                        {
+                                                            "type": "Ext.button.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "itemId": "loginBtn",
+                                                                "margin": 2,
+                                                                "text": "登入"
+                                                            },
+                                                            "name": "MyButton2",
+                                                            "designerId": "f8241447-57d1-414c-8d0b-c8fb2f42baf1"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null,
+                        "html": "<div align=\"center\"> 版權所有 © 2016 Agricloud. All Rights   Reserved. CopyRight<br>\\n    本系統由雲端農場研發設計 version web1.0\\n </div>",
+                        "itemId": "copyright",
+                        "layout|flex": null,
+                        "style": [
+                            "{",
+                            "    align: 'center'",
+                            "}"
+                        ],
+                        "width": null
+                    },
+                    "name": "MyContainer11",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "1976e77b-90c4-4726-8be7-e46dab227188"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "frame": null,
+                "height": 81,
+                "html": "<footer>\\n <div align=\"right\"> ．擁有產品履歷．安全．信賴．e化管理 </div> \\n </footer>",
+                "itemId": "footer",
+                "layout|flex": 1
+            },
+            "name": "MyContainer10",
+            "configAlternates": {
+                "html": "string"
+            },
+            "designerId": "25b9587b-b3c3-4d81-a756-08098241d9bf"
+        }
+    ]
+}

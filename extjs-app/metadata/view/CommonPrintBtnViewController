@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commonprintbtn",
+        "designer|userClassName": "CommonPrintBtnViewController"
+    },
+    "name": "CommonDeleteBtnViewController2",
+    "designerId": "877ccad6-12f8-4d89-884c-fc27f29f6b84"
+}

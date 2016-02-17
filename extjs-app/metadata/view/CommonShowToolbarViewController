@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commonshowtoolbar",
+        "designer|userClassName": "CommonShowToolbarViewController"
+    },
+    "name": "CommonIndexToolbarViewController1",
+    "designerId": "f6049778-0a26-4674-b167-126e1f1d1138"
+}

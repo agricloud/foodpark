@@ -1,0 +1,46 @@
+{
+    "type": "Ext.button.Button",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commonsavebtn",
+        "designer|userClassName": "CommonSaveBtn",
+        "glyph": 86,
+        "itemId": "commonSaveBtn",
+        "style": "font-family:Pictos;",
+        "text": "Save"
+    },
+    "name": "MyButton5",
+    "configAlternates": {
+        "style": "string"
+    },
+    "designerId": "a206fd17-8f05-4714-8dc7-176ef792feb2",
+    "viewControllerInstanceId": "febab807-669d-4efd-8366-fedbb8165a0e",
+    "viewModelInstanceId": "0e540b2d-6b71-4fa7-9bee-754cda37c370",
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processCommonSaveBtn",
+                "implHandler": [
+                    "config.text=Utilities.getMsg('common.saveBtn.label');",
+                    "",
+                    "return config;"
+                ]
+            },
+            "name": "processCommonSaveBtn",
+            "designerId": "93790d90-f173-460f-9421-542ef2d50552"
+        }
+    ]
+}

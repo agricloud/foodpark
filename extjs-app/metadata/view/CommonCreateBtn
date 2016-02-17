@@ -1,0 +1,46 @@
+{
+    "type": "Ext.button.Button",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commoncreatebtn",
+        "designer|userClassName": "CommonCreateBtn",
+        "glyph": 43,
+        "itemId": "commonCreateBtn",
+        "style": "font-family:Pictos;",
+        "text": "Create"
+    },
+    "name": "MyButton5",
+    "configAlternates": {
+        "style": "string"
+    },
+    "designerId": "f4add1d3-49a0-4d6a-921b-f1e096d0ed01",
+    "viewControllerInstanceId": "70c52c69-2063-4313-a98d-fb7d1e799cac",
+    "viewModelInstanceId": "f6abf80c-7c39-4c35-8b7d-2dfbcf8e9aba",
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processCommonCreateBtn",
+                "implHandler": [
+                    "config.text=Utilities.getMsg('common.createBtn.label');",
+                    "",
+                    "return config;"
+                ]
+            },
+            "name": "processCommonCreateBtn",
+            "designerId": "801c86ff-466b-4952-864d-ad2c04f58a92"
+        }
+    ]
+}
