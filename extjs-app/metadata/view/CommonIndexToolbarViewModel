@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commonindextoolbar",
+        "designer|userClassName": "CommonIndexToolbarViewModel"
+    },
+    "designerId": "d684c720-43c9-4604-a21f-934b2c4cf70e"
+}

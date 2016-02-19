@@ -1,0 +1,78 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defaultListenerScope": null,
+        "designer|initialView": true,
+        "designer|userAlias": "mainviewport",
+        "designer|userClassName": "MainViewport",
+        "id": "mainVP",
+        "layout": "card"
+    },
+    "name": "MyViewport",
+    "designerId": "6df2eec5-4c25-4bd0-8c69-b4cd8292cec7",
+    "viewControllerInstanceId": "c363d28a-d84d-4a4a-ba2a-1ef027ee7d02",
+    "viewModelInstanceId": "0e4acf0f-713c-4c27-8a4b-0f3778940efe",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "reference": null
+            },
+            "name": "logincontainer",
+            "designerId": "eb6d3d6e-663c-44f9-ad18-b8a008a3598c",
+            "masterInstanceId": "55487402-e7aa-489c-a754-392be6cb118b"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processMainViewport",
+                "implHandler": [
+                    "Utilities.readSysConfig();"
+                ]
+            },
+            "name": "processMainViewport",
+            "designerId": "f657e7cb-a75e-412d-a44e-cb3e6879ee50"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMainVPAfterRender",
+                "implHandler": [
+                    "var mask = Ext.get('loading-mask');",
+                    "// Destroy the masks",
+                    "if(mask)",
+                    "    mask.fadeOut({callback: function(){ mask.destroy(); }});",
+                    "",
+                    "Ext.getBody().removeCls( 'splash' );"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onMainVPAfterRender",
+            "designerId": "2086ff7a-d53c-486e-a813-0476e76d448e"
+        }
+    ]
+}

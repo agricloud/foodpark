@@ -5,7 +5,9 @@
    "overrides": "${app.dir}/overrides",
    "framework": "ext",
    "theme": "ext-theme-crisp-eeae21b0-befd-407c-918c-582f0240008b",
-   "requires": [],
+   "requires": [
+      "elmasse-bundle"
+   ],
    "sass": {
       "namespace": "foodpark"
    },
@@ -22,6 +24,9 @@
       {
          "path": "bootstrap.css",
          "bootstrap": true
+      },
+      {
+         "path": "resources/css/custom.css"
       }
    ],
    "production": {},
@@ -45,7 +50,9 @@
       ],
       "fallback": []
    },
-   "resources": [],
+   "resources": [
+      "resources/css/custom.css"
+   ],
    "ignore": [
       "(^|/)CVS(/?$|/.*?$)"
    ],

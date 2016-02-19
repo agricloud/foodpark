@@ -1,0 +1,958 @@
+{
+    "type": "class",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CommonController",
+        "extend": "Ext.app.Controller"
+    },
+    "name": "MyClass",
+    "designerId": "5c1392a7-d807-49b0-8b2d-38dd8b4e33f7",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callback"
+                ],
+                "fn": "doShowWithImage",
+                "implHandler": [
+                    "this.getImageUploader().emptyImage();",
+                    "",
+                    "var that = this;",
+                    "this.doShow(function(success, form, action){",
+                    "    if(success){",
+                    "",
+                    "        if (callback && callback instanceof Function) {",
+                    "            callback(true, form, action,function(){",
+                    "                that.setImageUploader();//更新imageUploader domainId",
+                    "            });",
+                    "        }",
+                    "        else",
+                    "        that.setImageUploader();//更新imageUploader domainId",
+                    "    }",
+                    "    else{",
+                    "        if (callback && callback instanceof Function){",
+                    "            callback(false, form, action,function(){",
+                    "                that.getImageUploader().setDomainId(null);",
+                    "            });",
+                    "        }",
+                    "        else",
+                    "        that.getImageUploader().setDomainId(null);",
+                    "    }",
+                    "});"
+                ]
+            },
+            "name": "doShowWithImage",
+            "designerId": "80385e9f-8acf-4964-b44e-84338322f4a7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callback"
+                ],
+                "fn": "doShow",
+                "implHandler": [
+                    "console.log('commonController--'+this.domainName+'--doShow');",
+                    "",
+                    "var that = this;",
+                    "var record = this.getMainGrid().getSelectionModel().getSelection()[0];",
+                    "var id = -1;",
+                    "",
+                    "if(this.getMainGrid().getSelectionModel().getSelection()[0])",
+                    "id = record.data.id;",
+                    "",
+                    "this.getMainForm().getForm().reset(true);",
+                    "",
+                    "this.getMainForm().getForm().load({",
+                    "    url: this.getRoot()+'/'+this.domainName+'/show/'+id,",
+                    "    params: this.getParams(),",
+                    "    waitMsg: Utilities.getMsg('default.message.load'),",
+                    "    success: function(form, action) {",
+                    "        ",
+                    "        that.activeEditor();",
+                    "        that.actionName = 'update';",
+                    "",
+                    "        if(form.findField('typeName')&&form.findField('name')){",
+                    "            form.findField('typeName').setReadOnly( true );",
+                    "            form.findField('name').setReadOnly( true );",
+                    "        }",
+                    "",
+                    "        if (callback && callback instanceof Function) {",
+                    "            callback(true, form, action);",
+                    "        }",
+                    "    },",
+                    "",
+                    "    failure: function(form, action) {",
+                    "        Ext.MessageBox.alert('Failure', action.result.message);",
+                    "        if (callback && callback instanceof Function){",
+                    "            callback(false, form, action);",
+                    "        }",
+                    "    }",
+                    "});"
+                ]
+            },
+            "name": "doShow",
+            "designerId": "c6d753f4-7ec8-451b-a453-ce578e69c372"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "doCreateWithImage",
+                "implHandler": [
+                    "this.getImageUploader().emptyImage();",
+                    "this.getImageUploader().setDomainId(null);",
+                    "",
+                    "this.doCreate();"
+                ]
+            },
+            "name": "doCreateWithImage",
+            "designerId": "a63c302f-3db4-4b87-81d4-398fb3cc0017"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callback"
+                ],
+                "fn": "doCreate",
+                "implHandler": [
+                    "console.log('commonController--'+this.domainName+'--doCreate');",
+                    "var that = this;",
+                    "",
+                    "var params = this.getParams();",
+                    "params[this.masterKey] = this.masterId;",
+                    "this.getMainForm().getForm().reset(true);",
+                    "",
+                    "this.getMainForm().getForm().load({",
+                    "    url: this.getRoot()+'/'+this.domainName+'/create',",
+                    "    params: params,",
+                    "    success: function(form, action) {",
+                    "        that.actionName = 'save';",
+                    "        that.activeEditor();",
+                    "        that.getMainForm().up('panel[itemId=show]').down('commondeletebtn').setDisabled(true);",
+                    "        that.getMainForm().up('panel[itemId=show]').down('commonprintbtn').setDisabled(true);",
+                    "",
+                    "        if(form.findField('typeName')&&form.findField('name')){",
+                    "            form.findField('typeName').setReadOnly( false );",
+                    "            form.findField('name').setReadOnly( false );",
+                    "        }",
+                    "",
+                    "        if (callback && callback instanceof Function) {",
+                    "            callback(true, form, action);",
+                    "        }",
+                    "    },",
+                    "",
+                    "    failure: function(form, action) {",
+                    "        Ext.MessageBox.alert('Failure', action.result.message);",
+                    "",
+                    "        if (callback && callback instanceof Function) {",
+                    "            callback(false, form, action);",
+                    "        }",
+                    "    }",
+                    "",
+                    "});"
+                ]
+            },
+            "name": "doCreate",
+            "designerId": "6eca5357-9561-44a7-a380-cbc0cd7d8e79"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callback, msg"
+                ],
+                "fn": "doDelete",
+                "implHandler": [
+                    "var that = this ;",
+                    "",
+                    "var msgBox = Ext.Msg;",
+                    "msgBox.buttonText={",
+                    "    no: Utilities.getMsg('default.message.no'),",
+                    "    yes: Utilities.getMsg('default.message.yes')",
+                    "};",
+                    "",
+                    "//default msg",
+                    "if(typeof msg!=\"string\" || msg==\"\")",
+                    "msg = 'default.message.deleteConfirm';",
+                    "",
+                    "msgBox.confirm('Confirm delete', Utilities.getMsg(msg), function(e)",
+                    "{",
+                    "    if(e == 'yes')",
+                    "    {",
+                    "        that.actionName='delete';",
+                    "        that.submitForm(function(success){",
+                    "            if(success){",
+                    "                that.activeGrid();",
+                    "                that.actionName = '' ;",
+                    "                that.getMainGrid().getStore().reload();",
+                    "                that.disableShowBtn();",
+                    "            }",
+                    "",
+                    "            that.actionName ='update';",
+                    "",
+                    "            if (callback && callback instanceof Function) {",
+                    "                callback(success);",
+                    "            }",
+                    "",
+                    "        });",
+                    "    }",
+                    "});"
+                ]
+            },
+            "name": "doDelete",
+            "designerId": "481000a4-2345-40bd-85d8-3f6242cf5c62"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callback"
+                ],
+                "fn": "doSave",
+                "implHandler": [
+                    "",
+                    "console.log('commonController--'+this.domainName+'--doSave');",
+                    "var that = this ;",
+                    "",
+                    "this.submitForm(function(success){",
+                    "    if(success){",
+                    "",
+                    "        that.getMainGrid().getStore().reload();",
+                    "        that.activeGrid();",
+                    "",
+                    "        if(that.actionName === 'save'){",
+                    "            that.actionName = '' ;",
+                    "            if(that.getMainForm().up().down('[itemId=detailGrid]')){",
+                    "                that.enableDetailCreateBtn();",
+                    "            }",
+                    "        }",
+                    "",
+                    "        if (callback && callback instanceof Function) {",
+                    "            callback(success);",
+                    "        }",
+                    "    }",
+                    "",
+                    "});"
+                ]
+            },
+            "name": "doSave",
+            "designerId": "c63ffbeb-6d6e-46cb-a8ce-3a9f3f55ee9c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "obj, record, index, eOpts"
+                ],
+                "fn": "doIndexDetail",
+                "implHandler": [
+                    "this.masterId = record.data.id;",
+                    "",
+                    "console.log('commonController--'+this.domainName+'/'+this.masterId+'--doIndexDetail');",
+                    "",
+                    "var grid = this.getMainGrid();",
+                    "",
+                    "grid.getStore().data.clear();",
+                    "",
+                    "var params = {};",
+                    "params[this.masterKey] = this.masterId;",
+                    "",
+                    "grid.getStore().getProxy().extraParams = params;",
+                    "grid.getStore().load();"
+                ]
+            },
+            "name": "doIndexDetail",
+            "designerId": "1b47e861-dd52-4862-90a1-b6274c3691f0"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callback"
+                ],
+                "fn": "submitForm",
+                "implHandler": [
+                    "console.log('/'+this.domainName+'/'+this.actionName);",
+                    "",
+                    "var message;",
+                    "if(this.actionName=='save')",
+                    "    message = \"default.message.save\";",
+                    "else if(this.actionName=='delete')",
+                    "    message = \"default.message.delete\";",
+                    "else if(this.actionName=='update')",
+                    "    message = \"default.message.update\";",
+                    "",
+                    "this.getMainForm().getForm().submit({",
+                    "    url: this.getRoot()+'/'+this.domainName+'/'+this.actionName,",
+                    "    params: this.getParams(),",
+                    "    submitEmptyText: false,",
+                    "    waitMsg: Utilities.getMsg(message),",
+                    "    success: function(form,action) {",
+                    "        Ext.MessageBox.alert('Success',action.result.message);",
+                    "",
+                    "        if (callback) {",
+                    "            callback(true, form, action);",
+                    "        }",
+                    "",
+                    "    },",
+                    "    failure: function(form, action) {",
+                    "",
+                    "        var msg =\"\";",
+                    "        for(var key in action.result.errors){",
+                    "            msg+=action.result.errors[key]+\"<br>\";",
+                    "        }",
+                    "        msg = action.result.message+'<br>'+msg;",
+                    "        Ext.MessageBox.alert('Failure', msg);",
+                    "        if (callback) {",
+                    "            callback(false, form, action);",
+                    "        }",
+                    "    }",
+                    "});"
+                ]
+            },
+            "name": "submitForm",
+            "designerId": "4f233e88-35b8-4387-acc1-ad2f0b815ba0"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "activeGrid",
+                "implHandler": [
+                    "this.getMainForm().up('panel[itemId=show]').up().getLayout().setActiveItem(this.getMainGrid().down().up(\"panel[itemId=index]\"));"
+                ]
+            },
+            "name": "activeGrid",
+            "designerId": "0a5a7dfc-ddb6-4b7f-9fba-0770dd75b9d4"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "activeEditor",
+                "implHandler": [
+                    "if(this.getMainForm().up('panel[itemId=show]').down('commondeletebtn'))",
+                    "    this.getMainForm().up('panel[itemId=show]').down('commondeletebtn').setDisabled(false);",
+                    "if(this.getMainForm().up('panel[itemId=show]').down('commonprintbtn'))",
+                    "    this.getMainForm().up('panel[itemId=show]').down('commonprintbtn').setDisabled(false);",
+                    "this.getMainForm().up('panel[itemId=show]').up().getLayout().setActiveItem(this.getMainForm().up('panel[itemId=show]'));"
+                ]
+            },
+            "name": "activeEditor",
+            "designerId": "bdd79fe0-9e6a-4739-8e87-8b6836a4ad49"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callback"
+                ],
+                "fn": "doCancel",
+                "implHandler": [
+                    "this.getMainForm().getForm().reset(true);",
+                    "this.activeGrid();",
+                    "if(this.getMainForm().up().down('[itemId=detailGrid]')){",
+                    "    this.enableDetailCreateBtn();",
+                    "}",
+                    "if (callback && callback instanceof Function) {",
+                    "    callback();",
+                    "}"
+                ]
+            },
+            "name": "doCancel",
+            "designerId": "2af4f598-a470-4b2d-a0a3-de406251b5bd"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setImageUploader",
+                "implHandler": [
+                    "//console.log(this.getImageUploader());",
+                    "var record= this.getMainForm().down('field[name=id]');",
+                    "this.getImageUploader().setDomainId(record.value);",
+                    "this.getImageUploader().showImage();"
+                ]
+            },
+            "name": "setImageUploader",
+            "designerId": "5077a2f9-04dd-4724-9999-a3b94df58538"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "disableShowBtn",
+                "implHandler": [
+                    "this.getMainGrid().up('panel[itemId=index]').down('commonshowbtn').setDisabled(true);"
+                ]
+            },
+            "name": "disableShowBtn",
+            "designerId": "c6e539e0-1852-4b9b-b6eb-26c6a2cc7018"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "enableShowBtn",
+                "implHandler": [
+                    "this.getMainGrid().up('panel[itemId=index]').down('commonshowbtn').setDisabled(false);"
+                ]
+            },
+            "name": "enableShowBtn",
+            "designerId": "d1304630-3b65-477f-a4ba-568346711ca9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getRoot",
+                "implHandler": [
+                    "return '';"
+                ]
+            },
+            "name": "getRoot",
+            "designerId": "d51d6b8b-e95b-4447-8f8f-6ca169accb76"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getParams",
+                "implHandler": [
+                    "if(this.domainName == 'foodpaint')",
+                    "    return {foodpaintController: this.foodpaintController};",
+                    "else return {};"
+                ]
+            },
+            "name": "getParams",
+            "designerId": "f4498c09-7238-4e47-81da-207bf6dad34d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callback"
+                ],
+                "fn": "doCreateAndIndexDetail",
+                "implHandler": [
+                    "var that=this;",
+                    "",
+                    "this.doCreate(function(success,form,action){",
+                    "    //單頭單身合併時 需將單身store移除",
+                    "    that.getDetailGrid().getStore().removeAll();",
+                    "    that.disableDetailCreateBtn();",
+                    "    that.disableDetailShowBtn();",
+                    "",
+                    "    if (callback && callback instanceof Function) {",
+                    "        callback(success, form, action);",
+                    "    }",
+                    "});"
+                ]
+            },
+            "name": "doCreateAndIndexDetail",
+            "designerId": "e3232585-6b75-4355-a61f-4542c2cf90b9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callback"
+                ],
+                "fn": "doShowAndIndexDetail",
+                "implHandler": [
+                    "var that=this;",
+                    "this.doShow(function(success, form, action){",
+                    "",
+                    "    if (callback && callback instanceof Function) {",
+                    "        callback(true, form, action);",
+                    "    }",
+                    "",
+                    "    var record = that.getMainGrid().getSelectionModel().getSelection()[0];",
+                    "    that.masterId = record.data.id;",
+                    "",
+                    "    console.log('commonController--'+that.domainName+'/'+that.masterId+'--doShowAndIndexDetail');",
+                    "",
+                    "    var grid = that.getDetailGrid();",
+                    "",
+                    "    grid.getStore().data.clear();",
+                    "",
+                    "    var params = {};",
+                    "    params[that.masterKey] = that.masterId;",
+                    "",
+                    "",
+                    "    grid.getStore().getProxy().extraParams = params;",
+                    "    grid.getStore().load();",
+                    "",
+                    "});"
+                ]
+            },
+            "name": "doShowAndIndexDetail",
+            "designerId": "254f1426-9cba-4aa4-ba96-7a8fa982e7b4"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callback"
+                ],
+                "fn": "doShowDetail",
+                "implHandler": [
+                    "console.log('commonController--'+this.domainName+'--doShowDetail');",
+                    "",
+                    "var that = this;",
+                    "var record= this.getDetailGrid().getSelectionModel().getSelection()[0];",
+                    "var id = -1;",
+                    "",
+                    "if(this.getDetailGrid().getSelectionModel().getSelection()[0])",
+                    "    id = record.data.id;",
+                    "",
+                    "this.getDetailForm().getForm().reset(true);",
+                    "",
+                    "this.getDetailForm().getForm().load({",
+                    "    url: this.getRoot()+'/'+this.domainName+'/show/'+id,",
+                    "    params: this.getDetailParams(),",
+                    "    waitMsg: Utilities.getMsg('default.message.load'),",
+                    "    success: function(form, action) {",
+                    "",
+                    "        that.activeDetailEditor();",
+                    "        that.detailActionName = 'update';",
+                    "",
+                    "        if (callback && callback instanceof Function) {",
+                    "            callback(true, form, action);",
+                    "        }",
+                    "    },",
+                    "",
+                    "    failure: function(form, action) {",
+                    "        Ext.MessageBox.alert('Failure', action.result.message);",
+                    "        if (callback && callback instanceof Function){",
+                    "            callback(false, form, action);",
+                    "        }",
+                    "    }",
+                    "});"
+                ]
+            },
+            "name": "doShowDetail",
+            "designerId": "a6811fcd-a4fc-45bf-a198-603d354e5ec2"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callback"
+                ],
+                "fn": "doCreateDetail",
+                "implHandler": [
+                    "console.log('commonController--'+this.domainName+'--doCreateDetail');",
+                    "var that = this;",
+                    "",
+                    "var params = this.getDetailParams();",
+                    "params[this.masterKey] = this.masterId;",
+                    "this.getDetailForm().getForm().reset(true);",
+                    "",
+                    "this.getDetailForm().getForm().load({",
+                    "    url: this.getRoot()+'/'+this.domainName+'/create',",
+                    "    params: params,",
+                    "    success: function(form, action) {",
+                    "        that.detailActionName = 'save';",
+                    "        that.activeDetailEditor();",
+                    "        that.getDetailForm().up('panel[itemId=showDetail]').down('commondeletebtn').setDisabled(true);",
+                    "",
+                    "        if (callback && callback instanceof Function) {",
+                    "            callback(true, form, action);",
+                    "        }",
+                    "",
+                    "    },",
+                    "",
+                    "    failure: function(form, action) {",
+                    "        Ext.MessageBox.alert('Failure', action.result.message);",
+                    "    }",
+                    "",
+                    "});"
+                ]
+            },
+            "name": "doCreateDetail",
+            "designerId": "34f22db3-04a1-4942-9325-e3f00ff6d47c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "doDeleteDetail",
+                "implHandler": [
+                    "var that = this ;",
+                    "",
+                    "var msg = Ext.Msg;",
+                    "msg.buttonText = {",
+                    "    no: Utilities.getMsg('default.message.no'),",
+                    "    yes: Utilities.getMsg('default.message.yes')",
+                    "};",
+                    "",
+                    "msg.confirm('Confirm delete', Utilities.getMsg('default.message.deleteConfirm'), function(e)",
+                    "{",
+                    "    if(e=='yes')",
+                    "    {",
+                    "        that.detailActionName = 'delete';",
+                    "        that.submitDetailForm(function(success){",
+                    "            if(success){",
+                    "                that.detailActionName = '' ;",
+                    "                that.getMainGrid().getStore().reload();",
+                    "                that.getDetailGrid().getStore().reload();",
+                    "                that.doShow();",
+                    "                //that.activeDetailGrid();",
+                    "                that.disableDetailShowBtn();",
+                    "            }",
+                    "            that.detailActionName = 'update';",
+                    "",
+                    "        });",
+                    "    }",
+                    "});"
+                ]
+            },
+            "name": "doDeleteDetail",
+            "designerId": "8ce43923-79e5-40af-a3a2-29d8edac26d0"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "doSaveDetail",
+                "implHandler": [
+                    "console.log('commonController--'+this.domainName+'--doSave');",
+                    "var that = this ;",
+                    "",
+                    "this.submitDetailForm(function(success){",
+                    "    if(success){",
+                    "",
+                    "        that.getMainGrid().getStore().reload();",
+                    "        that.getDetailGrid().getStore().reload();",
+                    "        that.doShow();",
+                    "        //that.activeDetailGrid();",
+                    "        if(that.detailActionName=='save'){",
+                    "            that.detailActionName = '' ;",
+                    "        }",
+                    "    }",
+                    "",
+                    "});"
+                ]
+            },
+            "name": "doSaveDetail",
+            "designerId": "ae94205e-118a-4ad2-a591-b1c099ae5e99"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "activeDetailEditor",
+                "implHandler": [
+                    "if(this.getDetailForm().up('panel[itemId=showDetail]').down('commondeletebtn'))",
+                    "    this.getDetailForm().up('panel[itemId=showDetail]').down('commondeletebtn').setDisabled(false);",
+                    "this.getDetailForm().up('panel[itemId=showDetail]').up().getLayout().setActiveItem(this.getDetailForm().up('panel[itemId=showDetail]'));"
+                ]
+            },
+            "name": "activeDetailEditor",
+            "designerId": "63258181-ec7c-49cd-b19b-d39d61ac3500"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "activeDetailGrid",
+                "implHandler": [
+                    "this.getDetailForm().up('panel[itemId=showDetail]').up().getLayout().setActiveItem(this.getDetailGrid().down().up(\"panel[itemId=show]\"));"
+                ]
+            },
+            "name": "activeDetailGrid",
+            "designerId": "7ca88a27-5b96-4f0e-8753-9abaa206eaae"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "doCancelDetail",
+                "implHandler": [
+                    "this.getDetailForm().getForm().reset(true);",
+                    "this.activeDetailGrid();"
+                ]
+            },
+            "name": "doCancelDetail",
+            "designerId": "6f3eaff8-38e3-4461-bd73-49b1f900391e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "enableDetailShowBtn",
+                "implHandler": [
+                    "this.getDetailGrid().up('panel[itemId=indexDetail]').down('commonshowbtn').setDisabled(false);"
+                ]
+            },
+            "name": "enableDetailShowBtn",
+            "designerId": "f7740039-3bf6-482b-8d6e-0b169b483ff6"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "disableDetailShowBtn",
+                "implHandler": [
+                    "this.getDetailGrid().up('panel[itemId=indexDetail]').down('commonshowbtn').setDisabled(true);"
+                ]
+            },
+            "name": "disableDetailShowBtn",
+            "designerId": "80a7eee9-2973-4614-aca9-2ede44086d54"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getDetailParams",
+                "implHandler": [
+                    "if(this.domainName=='foodpaint')",
+                    "    return {foodpaintController: this.foodpaintDetController};",
+                    "else return {};"
+                ]
+            },
+            "name": "getDetailParams",
+            "designerId": "813935fc-28b0-4709-96f2-306138a9e0a4"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callback"
+                ],
+                "fn": "submitDetailForm",
+                "implHandler": [
+                    "console.log('/'+this.domainName+'/'+this.detailActionName);",
+                    "",
+                    "var message;",
+                    "if(this.detailActionName=='save')",
+                    "    message = \"default.message.save\";",
+                    "else if(this.detailActionName=='delete')",
+                    "    message = \"default.message.delete\";",
+                    "else",
+                    "    message = \"default.message.update\";",
+                    "",
+                    "this.getDetailForm().getForm().submit({",
+                    "    url: this.getRoot()+'/'+this.domainName+'/'+this.detailActionName,",
+                    "    params: this.getDetailParams(),",
+                    "    submitEmptyText: false,",
+                    "    waitMsg: Utilities.getMsg(message),",
+                    "    success: function(form, action) {",
+                    "        Ext.MessageBox.alert('Success', action.result.message);",
+                    "",
+                    "        if (callback) {",
+                    "            callback(true, form, action);",
+                    "        }",
+                    "",
+                    "    },",
+                    "    failure: function(form, action) {",
+                    "        var msg =\"\";",
+                    "        for(var key in action.result.errors){",
+                    "            msg+=action.result.errors[key];",
+                    "        }",
+                    "        msg = action.result.message+'<br>'+msg;",
+                    "        Ext.MessageBox.alert('Failure', msg);",
+                    "        if (callback) {",
+                    "            callback(false, form, action);",
+                    "        }",
+                    "    }",
+                    "});"
+                ]
+            },
+            "name": "submitDetailForm",
+            "designerId": "a2d5d27a-8dd9-4b02-95d0-2ffc667efdb4"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "enableDetailCreateBtn",
+                "implHandler": [
+                    "this.getDetailGrid().up('panel[itemId=indexDetail]').down('commoncreatebtn').setDisabled(false);"
+                ]
+            },
+            "name": "enableDetailCreateBtn",
+            "designerId": "f50dd923-e91d-43a9-afb2-3edc2fe3c205"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "disableDetailCreateBtn",
+                "implHandler": [
+                    "this.getDetailGrid().up('panel[itemId=indexDetail]').down('commoncreatebtn').setDisabled(true);"
+                ]
+            },
+            "name": "disableDetailCreateBtn",
+            "designerId": "51af8708-ac1a-4d66-90ec-f521f3711894"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "doPrint",
+                "implHandler": [
+                    "var id = -1;",
+                    "if(this.getMainForm().getForm().findField('id'))",
+                    "    id = this.getMainForm().getForm().findField('id').getValue();",
+                    "var queryParams='';",
+                    "if(this.domainName=='foodpaint')",
+                    "    queryParams = '&foodpaintController='+this.foodpaintController;",
+                    "",
+                    "window.open(this.getRoot()+'/'+this.domainName+'/print?id='+id+queryParams);"
+                ]
+            },
+            "name": "doPrint",
+            "designerId": "00b55b4d-27dd-443e-bd7e-8c39481a2808"
+        }
+    ]
+}

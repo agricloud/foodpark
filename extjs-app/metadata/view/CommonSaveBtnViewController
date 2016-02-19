@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commonsavebtn",
+        "designer|userClassName": "CommonSaveBtnViewController"
+    },
+    "designerId": "febab807-669d-4efd-8366-fedbb8165a0e"
+}

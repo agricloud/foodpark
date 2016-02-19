@@ -1,0 +1,31 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userClassName": "SiteStore",
+        "model": "Site",
+        "storeId": "SiteStore"
+    },
+    "name": "MyStore",
+    "designerId": "e56717e1-55db-4319-a2cf-852081d62d70",
+    "cn": [
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "name"
+            },
+            "name": "MySorter",
+            "designerId": "d04c68d0-ab08-4801-979b-3336f21d559e"
+        }
+    ]
+}

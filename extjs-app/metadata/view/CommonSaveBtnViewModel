@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commonsavebtn",
+        "designer|userClassName": "CommonSaveBtnViewModel"
+    },
+    "designerId": "0e540b2d-6b71-4fa7-9bee-754cda37c370"
+}

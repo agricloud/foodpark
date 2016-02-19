@@ -1,0 +1,50 @@
+{
+    "type": "Ext.toolbar.Toolbar",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commonindextoolbar",
+        "designer|userClassName": "CommonIndexToolbar",
+        "frame": null,
+        "itemId": "commonIndexToolbar",
+        "width": null
+    },
+    "name": "MyToolbar",
+    "designerId": "270630d0-118d-4eee-8d29-351b0deca92f",
+    "viewControllerInstanceId": "75bdc08e-da9e-43c0-90af-1dcfeffb892b",
+    "viewModelInstanceId": "d684c720-43c9-4604-a21f-934b2c4cf70e",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "name": "commoncreatebtn",
+            "designerId": "1ccf29fc-0b86-4977-9387-73ef248eb7ef",
+            "masterInstanceId": "f4add1d3-49a0-4d6a-921b-f1e096d0ed01"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disabled": true,
+                "layout|flex": null
+            },
+            "name": "commonshowbtn",
+            "designerId": "796aa0c6-887f-4a64-95b6-a6a28a427535",
+            "masterInstanceId": "3519663d-c4e9-4123-b6d4-87d3162c6e9b"
+        }
+    ]
+}

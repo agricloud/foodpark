@@ -1,0 +1,46 @@
+{
+    "type": "Ext.button.Button",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commoncancelbtn",
+        "designer|userClassName": "CommonCancelBtn",
+        "glyph": 115,
+        "itemId": "commonCancelBtn",
+        "style": "font-family:Pictos;",
+        "text": "Cancel"
+    },
+    "name": "CommonDeleteBtn1",
+    "configAlternates": {
+        "style": "string"
+    },
+    "designerId": "78cd09f3-f942-443d-970e-61fac2d5efd1",
+    "viewControllerInstanceId": "1b258b31-6ae0-466c-ac3e-ede121536e10",
+    "viewModelInstanceId": "c4d4d6d1-47b8-4178-999a-df86d0892270",
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processCommonCancelBtn",
+                "implHandler": [
+                    "config.text=Utilities.getMsg('common.cancelBtn.label');",
+                    "",
+                    "return config;"
+                ]
+            },
+            "name": "processCommonCancelBtn",
+            "designerId": "c40d20f6-2f9f-4c73-89c2-85105f5a6f59"
+        }
+    ]
+}

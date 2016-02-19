@@ -219,4 +219,4 @@ grails.plugin.springsecurity.failureHandler.defaultFailureUrl = '/login/authFail
 // aws.secretKey = ''
 // aws.bucketName = ''
 
-grails.i18nType = 'mfg'
+grails.i18nType = 'agri'

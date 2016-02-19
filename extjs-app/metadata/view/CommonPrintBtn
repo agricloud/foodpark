@@ -1,0 +1,46 @@
+{
+    "type": "Ext.button.Button",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commonprintbtn",
+        "designer|userClassName": "CommonPrintBtn",
+        "glyph": 77,
+        "itemId": "commonPrintBtn",
+        "style": "font-family:Pictos;",
+        "text": "Print"
+    },
+    "name": "CommonDeleteBtn2",
+    "configAlternates": {
+        "style": "string"
+    },
+    "designerId": "6f8cb8f0-eff5-4aa2-ae84-9123ff494da2",
+    "viewControllerInstanceId": "877ccad6-12f8-4d89-884c-fc27f29f6b84",
+    "viewModelInstanceId": "feccd8c8-305d-4600-bc1d-a911415c796a",
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processCommonPrintBtn",
+                "implHandler": [
+                    "config.text=Utilities.getMsg('common.printBtn.label');",
+                    "",
+                    "return config;"
+                ]
+            },
+            "name": "processCommonPrintBtn",
+            "designerId": "73500daf-37cd-4753-9f04-2e2c52de4c1c"
+        }
+    ]
+}

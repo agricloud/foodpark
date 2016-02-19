@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commonshowbtn",
+        "designer|userClassName": "CommonShowBtnViewController"
+    },
+    "name": "CommonCreateBtnViewController1",
+    "designerId": "d85d0eeb-bc83-4275-8677-65bd1c1faaef"
+}

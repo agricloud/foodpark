@@ -6,7 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "basePath": "ext/",
+        "basePath": "extjs/",
+        "debug": true,
         "designer|userClassName": "Library",
         "theme": "MyCrispTheme"
     },

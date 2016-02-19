@@ -1,0 +1,14 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css_makrymxk",
+        "url": "resources/css/custom.css"
+    },
+    "name": "css",
+    "designerId": "3d13f959-ea4c-4186-bf9e-2486f6431ffd"
+}

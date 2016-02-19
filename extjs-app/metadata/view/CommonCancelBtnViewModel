@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commoncancelbtn",
+        "designer|userClassName": "CommonCancelBtnViewModel"
+    },
+    "name": "CommonDeleteBtnViewModel1",
+    "designerId": "c4d4d6d1-47b8-4178-999a-df86d0892270"
+}

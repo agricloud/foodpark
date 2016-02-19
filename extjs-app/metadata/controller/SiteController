@@ -1,0 +1,93 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SiteController",
+        "mixins": [
+            "{",
+            "    commonController: 'foodpark.controller.CommonController'",
+            "}"
+        ],
+        "models": [
+            "Site"
+        ],
+        "stores": [
+            "SiteStore"
+        ],
+        "views": [
+            "SiteView"
+        ]
+    },
+    "name": "MyController",
+    "designerId": "9ca87fff-3db4-40ea-a016-1fa7ebf19d05",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainGrid",
+                "selector": "siteview #grid"
+            },
+            "name": "mainGrid",
+            "designerId": "16f969df-f3d7-4e55-a40f-6f8a10bbd188"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainForm",
+                "selector": "siteview #form"
+            },
+            "name": "mainForm",
+            "designerId": "0e318cf7-c598-4e41-ae5c-463ee3cd780b"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "application"
+                ],
+                "fn": "init",
+                "implHandler": [
+                    "this.control({",
+                    "    'siteview #index commonindextoolbar commonshowbtn': {",
+                    "        click: this.doShow",
+                    "    },",
+                    "    'siteview #show commonshowtoolbar commonsavebtn': {",
+                    "        click: this.doSave",
+                    "    },",
+                    "    'siteview #show commonshowtoolbar commoncancelbtn': {",
+                    "        click: this.doCancel",
+                    "    },",
+                    "    'siteview #grid':{",
+                    "        select: this.enableShowBtn,",
+                    "        deselect: this.disableShowBtn,",
+                    "        itemdblclick: this.doShow",
+                    "    }",
+                    "});",
+                    "",
+                    "this.domainName = 'site';"
+                ]
+            },
+            "name": "init",
+            "designerId": "4e569982-ffd1-471e-8b7d-4ee27f85a44b"
+        }
+    ]
+}

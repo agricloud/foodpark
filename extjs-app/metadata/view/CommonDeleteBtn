@@ -1,0 +1,46 @@
+{
+    "type": "Ext.button.Button",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commondeletebtn",
+        "designer|userClassName": "CommonDeleteBtn",
+        "glyph": 88,
+        "itemId": "commonDeleteBtn",
+        "style": "font-family:Pictos;",
+        "text": "Delete"
+    },
+    "name": "CommonCreateBtn1",
+    "configAlternates": {
+        "style": "string"
+    },
+    "designerId": "1125008e-bffd-4c77-bd62-29814f877312",
+    "viewControllerInstanceId": "614a2e23-4ae3-4119-8e74-961ca6636735",
+    "viewModelInstanceId": "08debc20-71c3-4e2e-868a-527739a3977e",
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processCommonDeleteBtn",
+                "implHandler": [
+                    "config.text=Utilities.getMsg('common.deleteBtn.label');",
+                    "",
+                    "return config;"
+                ]
+            },
+            "name": "processCommonDeleteBtn",
+            "designerId": "db091f62-161b-49cc-8119-a298087ea0a2"
+        }
+    ]
+}

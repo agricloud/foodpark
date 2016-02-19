@@ -1,0 +1,78 @@
+{
+    "type": "Ext.toolbar.Toolbar",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commonshowtoolbar",
+        "designer|userClassName": "CommonShowToolbar",
+        "frame": null,
+        "itemId": "commonShowToolbar",
+        "width": null
+    },
+    "name": "CommonIndexToolbar1",
+    "designerId": "fc4cb0c7-5e79-4b7b-8849-17a7d883af18",
+    "viewControllerInstanceId": "f6049778-0a26-4674-b167-126e1f1d1138",
+    "viewModelInstanceId": "51f48a35-4f64-4d17-a262-e1e865b04f56",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "name": "commonsavebtn",
+            "designerId": "b1d3f8d9-b297-4554-97f4-322ef95dc4f1",
+            "masterInstanceId": "a206fd17-8f05-4714-8dc7-176ef792feb2"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "name": "commondeletebtn",
+            "designerId": "974164d7-e7ea-4684-933b-9d984e48853b",
+            "masterInstanceId": "1125008e-bffd-4c77-bd62-29814f877312"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null
+            },
+            "name": "commoncancelbtn",
+            "designerId": "aec84821-ade7-4105-8700-f7f1fb736bd6",
+            "masterInstanceId": "78cd09f3-f942-443d-970e-61fac2d5efd1"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "layout|flex": null
+            },
+            "name": "commonprintbtn",
+            "designerId": "0c3b6e17-3948-48b2-b719-fe24e067dcc0",
+            "masterInstanceId": "6f8cb8f0-eff5-4aa2-ae84-9123ff494da2"
+        }
+    ]
+}
