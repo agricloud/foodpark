@@ -5,7 +5,7 @@
             "license": "custom",
             "cmdVersion": "6.0.2.14",
             "frameworkVersion": "5.1.1.451",
-            "frameworkOverride": "/Users/pipi/pipi/projects/foodpark/extjs-app/extjs"
+            "frameworkOverride": "~/extjs"
         },
         "canvasControls": {
             "viewportSize": {
