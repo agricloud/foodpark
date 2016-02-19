@@ -16,7 +16,7 @@
             }
         },
         "urlPrefix": "http://localhost:1841",
-        "exportPath": "/Users/pipi/pipi/projects/foodpark/web-app/development",
+        "exportPath": "../web-app/development",
         "spacesToIndent": 4,
         "sdkPath": "",
         "lineEnding": "LF",
