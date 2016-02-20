@@ -51,12 +51,12 @@ web-app/index.html
 web-app/app.js
 web-app/app.json
 web-app/config.rb
-web-app/foodprint-all.scss
+web-app/foodpark-all.scss
 web-app/resources
 web-app/.sass-cache
 web-app/touch
 web-app/reportFiles/
 
 .idea
-foodprint-grailsPlugins.iml
-foodprint.iml
+foodpark-grailsPlugins.iml
+foodpark.iml
