@@ -3,7 +3,7 @@
     "settings": {
         "cmd": {
             "license": "custom",
-            "cmdVersion": "6.0.2.14",
+            "cmdVersion": "6.1.1.76",
             "frameworkVersion": "5.1.1.451",
             "frameworkOverride": "~/extjs"
         },
@@ -32,8 +32,8 @@
             "display": "Build web app"
         }
     },
-    "xdsVersion": "3.2.0",
-    "xdsBuild": 339,
+    "xdsVersion": "3.5.0",
+    "xdsBuild": 268,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
     "framework": "ext51",
