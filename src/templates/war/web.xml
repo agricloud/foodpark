@@ -65,6 +65,9 @@
     <session-config>
         <!-- 30 minutes -->
         <session-timeout>30</session-timeout>
+        <cookie-config>
+            <name>JSESSIONID_FOODPARK</name>
+        </cookie-config>
     </session-config>
 
     <welcome-file-list>
