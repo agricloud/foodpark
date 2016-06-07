@@ -41,7 +41,8 @@ class ConvertService {
 		def result = [:]
 		result.id = user.id
 		result.username = user.username
-		result.password = user.password
+		if(user.password)
+            result.password = "***************************************"
 		result.enabled = user.enabled
 		result.accountExpired = user.accountExpired
 		result.accountLocked = user.accountLocked
