@@ -9,6 +9,11 @@ class User implements Serializable {
 	def grailsApplication
 	def messageSource
 
+	String editor
+    String creator
+    Date dateCreated
+    Date lastUpdated
+	
 	String username
 	String password
 	boolean enabled = true
@@ -27,10 +32,10 @@ class User implements Serializable {
 	String email
 
 	static belongsTo = [
-		site: Site		
+		site: Site
 	]
 
-	
+
 
 	User(String username, String password) {
 		this()
@@ -74,6 +79,8 @@ class User implements Serializable {
 	static transients = ['springSecurityService']
 
 	static constraints = {
+		editor nullable: true
+		creator nullable: true
 		username unique: true, blank: false, matches: "[a-zA-Z][a-zA-Z0-9]{3,}"
 		password blank: false
 		fullName blank: true
